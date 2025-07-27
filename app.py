@@ -6,6 +6,7 @@ from models import db, Tache
 from config import get_database_uri
 
 app = Flask(__name__)
+CORS(app)
 
 app.config["SQLALCHEMY_DATABASE_URI"]= get_database_uri()
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= False
