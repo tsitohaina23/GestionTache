@@ -1,9 +1,11 @@
 services:
   - type: web
-    name: gestion-tache-backend
+    name: tache-planifier
     env: python
-    plan: free
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: gunicorn backend.app:app
-    workingDir: backend
-    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tache-planifier
+          property: connectionString
