@@ -1,4 +1,4 @@
-flask
-flask_SQLAlchemy
-flask_cors
+Flask
+Flask-CORS
+Flask-SQLAlchemy
 gunicorn
